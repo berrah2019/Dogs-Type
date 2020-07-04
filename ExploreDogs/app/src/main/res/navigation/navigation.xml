@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.exploredogs.views.`Dog's race`"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_DeatailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/actionSetting"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.exploredogs.views.`Race Detail`"
+        android:label="DetailFragment" >
+        <action
+            android:id="@+id/action_ListFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <argument
+         android:name="doguid"
+            android:defaultValue="0"
+            app:argType="integer"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.exploredogs.views.Settings"
+        android:label="Settings" />
+</navigation>
